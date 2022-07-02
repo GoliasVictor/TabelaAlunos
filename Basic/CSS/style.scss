@@ -1,0 +1,163 @@
+$cor: #F55;
+*{
+	padding: 0;
+	margin: 0;
+}
+:root{
+	font-family: monospace;
+	--primaria  : #{scale-color($cor, $lightness: +0%)}; 
+	--secundaria: #{scale-color($cor, $lightness: +70%)}; 
+	--tercearia : #{scale-color($cor, $lightness: +90%)}; 
+}
+
+body{
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+main{
+	
+	width: 100%;
+	min-width: 200px;
+	max-width: 800px;
+	margin-top: 4em;
+}
+h1 {
+	text-align: center	;
+	margin-bottom: 1em;
+} 
+.ferramentas{
+	width: 100%;
+	margin-bottom: 10px;
+	display: grid;
+	grid-template-columns: 1fr auto auto auto;
+}
+#btn-novo,#filtro-situacao{
+	margin-left: 1em;
+}
+#filtro{
+	width: 100%;	
+}
+#alunos{
+	width: 100%;
+	border-collapse: collapse;
+
+	thead{
+		background-color: var(--primaria);
+		color:white
+	}
+	th,
+	td{
+		border-collapse: collapse;
+		padding: 0.5em 1em ;
+		text-align: center;
+	}
+ 	tbody tr{
+		display: none;
+		&.mostrando{
+			display: table-row;
+		}
+		//&.mostrando:nth-of-type(2n){
+		&:not(.linha-impar){
+			background-color: var(--tercearia);
+		}
+		//&.mostrando:nth-of-type(2n+1){
+		&.linha-impar{
+			background-color: var(--secundaria);
+		}
+	} 
+	
+}
+
+button, select, input{
+	border: 2px solid var(--primaria) ;
+	padding: 0.5em 1em ;
+
+}
+button, select{
+	background-color: var(--primaria);
+	color: white;
+} 
+.info-nome{
+	text-align: left;
+    text-transform: uppercase;
+}
+.btn-excluir{
+	color: #F00;
+}
+.aprovado .info-situacao::before{
+    content: "Aprovado(a)";
+}
+
+.reprovado {
+	background-color: #F00 !important;
+	font-weight: bold;
+	color: white;
+	.info-situacao::before{
+        content: "Reprovado(a)";
+    }
+	.btn-excluir{
+		color: white
+	}
+}
+#tela-novo-aluno{
+
+	&, &::before{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&.escondido{
+		display: none;
+	}
+	&:before{
+		content: "";
+		background-color: var(--secundaria); 
+		z-index: -1;
+		opacity: 0.5;
+	} 
+	form{
+		display: grid;
+		grid-template-columns: auto auto auto;
+		row-gap: 1em;
+		column-gap: 1em;
+		background-color: white;
+		align-items: center;
+		padding: 2em;
+		padding-right: 6em;
+		label{
+			text-align: right;
+			font-size: 1.1em;
+		}
+	}
+	h2,button{
+		text-align: center;
+	}
+	h2{
+		grid-column:2/span 2;
+		margin: 0;
+	}
+}
+#txt-rm,#txt-nota1, #txt-nota2 {
+	width: 5em; 
+}
+#msg{
+	text-align: center;
+	grid-column:2/span 2;
+}
+#lb-notas{
+	grid-column: 1;
+}
+#txt-nome{
+	grid-column: span 2;
+}
+#btn-adicionar{
+	grid-column: 2;
+}
+  

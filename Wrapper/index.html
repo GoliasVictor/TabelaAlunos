@@ -1,0 +1,47 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="CSS/estilo.css" type="text/css"/>
+    <title>Lista de Alunos</title>
+</head>
+<body>
+    <main>
+        <h1>Lista de Alunos</h1>
+
+        <form class="ferramentas">
+			<input type="search" name="filtro" id="filtro" oninput="buscarAluno(event)" />
+            <select name="filtroSituacao" id="filtro-situacao" onchange="buscarAluno()">
+				<option value="todas">Todos</option>
+				<option value="aprovados">Aprovados</option>
+				<option value="reprovados">Reprovados</option>
+			</select>
+			<button type="button" id="btn-novo" onclick="exibirPainelNovoAluno()">Novo</button>
+		</form>
+
+        <table id="alunos">
+            <thead>
+                <th>RM</th>
+                <th>Nome</th>
+                <th>Prova 01</th>
+                <th>Prova 02</th>
+                <th>Média</th>
+                <th>Situação Final</th>
+                <th></th>
+            </thead>
+            <tbody id="tbl-alunos"></tbody>
+        </table>
+        <div id="novo-aluno">
+        </div>
+     
+    </main>
+
+    <script src="./JS/aluno.js"        type="text/javascript"></script>
+    <script src="./JS/functions.js"    type="text/javascript"></script>
+    <script src="./JS/novoAluno.js"    type="text/javascript"></script>
+    <script src="./JS/scriptIndex.js"  type="text/javascript"></script>    
+</body>
+</html>

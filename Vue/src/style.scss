@@ -1,0 +1,40 @@
+$cor: #F55;
+*{
+	padding: 0;
+	margin: 0;
+}
+:root{
+	font-family: monospace;
+	--primaria  : #{scale-color($cor, $lightness: +0%)};
+	--secundaria: #{scale-color($cor, $lightness: +70%)};
+	--tercearia : #{scale-color($cor, $lightness: +90%)};
+}
+
+body{
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+main{
+
+	width: 100%;
+	min-width: 200px;
+	max-width: 800px;
+	margin-top: 4em;
+}
+h1 {
+	text-align: center	;
+	margin-bottom: 1em;
+}
+
+
+button, select, input{
+	border: 2px solid var(--primaria) ;
+	padding: 0.5em 1em ;
+
+}
+button, select{
+	background-color: var(--primaria);
+	color: white;
+}
+

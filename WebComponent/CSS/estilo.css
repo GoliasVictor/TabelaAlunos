@@ -1,0 +1,214 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  font-family: monospace;
+  --primaria: #ff5555;
+  --secundaria: #ffcccc;
+  --tercearia: #ffeeee;
+}
+
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main {
+  width: 100%;
+  min-width: 200px;
+  max-width: 800px;
+  margin-top: 4em;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.ferramentas {
+  width: 100%;
+  margin-bottom: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto auto auto;
+      grid-template-columns: 1fr auto auto auto;
+}
+
+#btn-novo, #filtro-situacao {
+  margin-left: 1em;
+}
+
+#filtro {
+  width: 100%;
+}
+
+#alunos {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#alunos thead {
+  background-color: var(--primaria);
+  color: white;
+}
+
+#alunos td {
+  border-collapse: collapse;
+  padding: 0.5em 1em;
+  text-align: center;
+}
+
+td, th {
+  padding: 0.5em 1em;
+  text-align: center;
+}
+
+linha-aluno {
+  vertical-align: middle;
+  display: none;
+}
+
+linha-aluno[mostrando="true"] {
+  display: table-row;
+}
+
+linha-aluno[mostrando="true"]:nth-of-type(2n) {
+  background-color: var(--tercearia);
+}
+
+linha-aluno[mostrando="true"]:nth-of-type(2n+1) {
+  background-color: var(--secundaria);
+}
+
+button, select, input {
+  border: 2px solid var(--primaria);
+  padding: 0.5em 1em;
+}
+
+button, select {
+  background-color: var(--primaria);
+  color: white;
+}
+
+.info-nome {
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.btn-excluir {
+  color: #F00;
+}
+
+[aprovado="true"] .info-situacao::before {
+  content: "Aprovado(a)";
+}
+
+[aprovado="false"] {
+  background-color: #F00 !important;
+  font-weight: bold;
+  color: white;
+}
+
+[aprovado="false"] .info-situacao::before {
+  content: "Reprovado(a)";
+}
+
+[aprovado="false"] .btn-excluir {
+  color: white;
+}
+
+#tela-novo-aluno {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#tela-novo-aluno, #tela-novo-aluno::before {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#tela-novo-aluno.escondido {
+  display: none;
+}
+
+#tela-novo-aluno:before {
+  content: "";
+  background-color: var(--secundaria);
+  z-index: -1;
+  opacity: 0.5;
+}
+
+#tela-novo-aluno form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  row-gap: 1em;
+  -webkit-column-gap: 1em;
+          column-gap: 1em;
+  background-color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2em;
+  padding-right: 6em;
+}
+
+#tela-novo-aluno form label {
+  text-align: right;
+  font-size: 1.1em;
+}
+
+#tela-novo-aluno h2, #tela-novo-aluno button {
+  text-align: center;
+}
+
+#tela-novo-aluno h2 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2/span 2;
+  margin: 0;
+}
+
+#txt-rm, #txt-nota1, #txt-nota2 {
+  width: 5em;
+}
+
+#msg {
+  text-align: center;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2/span 2;
+}
+
+#lb-notas {
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+#txt-nome {
+  grid-column: span 2;
+}
+
+#btn-adicionar {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+/*# sourceMappingURL=estilo.css.map */

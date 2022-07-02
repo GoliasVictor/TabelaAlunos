@@ -1,0 +1,106 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="CSS/style.css" type="text/css"/>
+    <title>Lista de Alunos</title>
+</head>
+<body>
+    <main>
+        <h1>Lista de Alunos</h1>
+            <form class="ferramentas">
+                <input type="search" name="filtro" id="filtro"/>
+                <button id="btn-buscar">Buscar</button>
+
+                <select name="filtroSituacao" id="filtro-situacao">
+                    <option value="todos">Todos</option>
+                    <option value="aprovados">Aprovados</option>
+                    <option value="reprovados">Reprovados</option>
+                </select> 
+                <button id="btn-novo">Novo</button>
+            </form>
+    
+            <table id="alunos">
+                <thead>
+                    <th>RM</th>
+                    <th>Nome</th>
+                    <th>Prova 01</th>
+                    <th>Prova 02</th>
+                    <th>Média</th>
+                    <th>Situação Final</th>
+                    <th></th>
+                </thead>    
+                <tbody>
+                    <tr class="aluno mostrando"> 
+                        <td class="info-rm">21031</td>
+                        <td class="info-nome">Sophia Esther Letícia Rodrigues</td>
+                        <td class="info-prova01">5,5</td>
+                        <td class="info-prova02">6,0</td>
+                        <td class="info-media"></td>
+                        <td class="info-situacao"></td>
+                        <td class="excluir-aluno"><i class="material-icons btn-excluir">disabled_by_default</i></td>
+                    </tr>
+                    <tr class="aluno mostrando">
+                        <td class="info-rm">21032</td>
+                        <td class="info-nome">Fernanda Rebeca Figueiredo</td>
+                        <td class="info-prova01">7,5</td>
+                        <td class="info-prova02">2</td>
+                        <td class="info-media"></td>
+                        <td class="info-situacao"></td>
+                        <td class="excluir-aluno"><i class="material-icons btn-excluir">disabled_by_default</i></td>
+                    </tr>
+                    <tr class="aluno mostrando">
+                        <td class="info-rm">21033</td>
+                        <td class="info-nome">Alana Isadora Maya Duarte</td>
+                        <td class="info-prova01">10,0</td>
+                        <td class="info-prova02">8,0</td>
+                        <td class="info-media"></td>
+                        <td class="info-situacao"></td>
+                        <td class="excluir-aluno"><i class="material-icons btn-excluir">disabled_by_default</i></td>
+                    </tr>
+                    <tr class="aluno mostrando">
+                        <td class="info-rm">21034</td>
+                        <td class="info-nome">Carlos Elias da Mota</td>
+                        <td class="info-prova01">9,0</td>
+                        <td class="info-prova02">5,0</td>
+                        <td class="info-media"></td>
+                        <td class="info-situacao"></td>
+                        <td class="excluir-aluno"><i class="material-icons btn-excluir">disabled_by_default</i></td>
+                    </tr>
+                    <tr class="aluno mostrando">
+                        <td class="info-rm">21035</td>
+                        <td class="info-nome">Luiz Enrico Martins</td>
+                        <td class="info-prova01">0,0</td>
+                        <td class="info-prova02">7,0</td>
+                        <td class="info-media"></td>
+                        <td class="info-situacao"></td>
+                        <td class="excluir-aluno"><i class="material-icons btn-excluir">disabled_by_default</i></td>
+                    </tr>
+                </tbody>
+            </table>
+        <div id="tela-novo-aluno" class="escondido"> 
+            <form id="frmNovo">
+                <h2>Novo Aluno</h2>
+                <label for="txt-nome" >Nome:  </label><input type="text"   name="txtNome" id="txt-nome"/>
+                <label for="txt-rm"   >RM:    </label><input type="number" name="txtRm" id="txt-rm" min="0" max="99999"/>
+                <label id="lb-notas">Notas:</label> 
+                <input placeholder="Nota 1" type="number" name="txtNota1" id="txt-nota1" min="0" max="10"/>
+                <input placeholder="Nota 2" type="number" name="txtNota2" id="txt-nota2" min="0" max="10"/>
+                <button id="btn-adicionar">Adicionar</button>
+                <button id="btn-cancelar">Cancelar</button>
+                <span id="msg"></span>
+            </form>
+        </div>
+        
+    </main>
+
+    <script src="./JS/functions.js"    type="text/javascript"></script>
+    <script src="./JS/scriptIndex.js"  type="text/javascript"></script>    
+    <script src="./JS/novoAluno.js"    type="text/javascript"></script>
+    <script src="./JS/excluirAluno.js" type="text/javascript"></script>
+    <script src="./JS/buscarAluno.js"  type="text/javascript"></script>
+</body>
+</html>
