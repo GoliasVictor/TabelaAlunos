@@ -1,0 +1,39 @@
+﻿@page "/"
+@using blazor.Data;
+<h1>Lista de Alunos</h1>
+<EditForm class="ferramentas" Model="@typeof(SituacaoAluno)">
+	<input @bind="StringBusca" @bind:event="oninput" type="search" name="filtro" id="filtro" placeholder="Nome" />
+	<InputSelect @bind-Value="@OpcaoSituacao" name="filtroSituacao" id="filtro-situacao">
+		<option value="0">Todos</option>
+		<option value="1">Aprovado</option>
+		<option value="2">Reprovado</option>
+	</InputSelect>
+	<button id="btn-novo" @onclick="abrirNovoAluno">Novo</button>
+</EditForm>
+
+<table id="alunos">
+	@if (Alunos == null)
+	{
+		<p>PERA QUE JÁ APARECE</p>
+	}
+	else {
+		<thead>
+			<th>RM</th>
+			<th>Nome</th>
+			<th>Prova 01</th>
+			<th>Prova 02</th>
+			<th>Média</th>
+			<th>Situação Final</th>
+			<th></th>
+		</thead>
+		<tbody>
+		@foreach (var aluno in Alunos.Select((value, i) => ( value, i ))){
+			<LinhaAluno aluno="@aluno.value" impar="@(aluno.i % 2 == 1)" OnExcluir="@(()=> ExcluirAluno(@aluno.value))" />
+		}
+		</tbody>
+	}
+</table>
+
+@if(CriandoAluno){
+	<FrmNovoAluno onfechar="@fecharNovoAluno"/>
+}

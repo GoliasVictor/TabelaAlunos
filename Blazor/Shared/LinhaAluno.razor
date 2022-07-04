@@ -1,0 +1,11 @@
+@using Data
+	
+<tr class="aluno @Classes"> 
+	<td class="info-rm">@aluno.RM</td>
+	<td class="info-nome">@aluno.Nome</td>
+	<td class="info-prova01">@aluno.Prova1</td>
+	<td class="info-prova02">@aluno.Prova2</td>
+	<td class="info-media">@aluno.Media</td>
+	<td class="info-situacao"></td>
+	<td class="excluir-aluno"><i class="material-icons btn-excluir" @onclick="@OnExcluir">disabled_by_default</i></td>
+</tr>

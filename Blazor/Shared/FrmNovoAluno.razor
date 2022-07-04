@@ -1,0 +1,17 @@
+<div id="tela-novo-aluno"> 
+	<EditForm id="frmNovo" Model="@aluno" OnValidSubmit="@CriarAluno" >
+		<h2>Novo Aluno</h2>
+		<label for="txt-nome" >Nome:  </label>
+		<InputText @bind-Value="@aluno.Nome" name="txtNome" id="txt-nome" title="oI FAMILAI"/>
+		<label for="txt-rm"   >RM:    </label>
+		<input @bind="@aluno.RM" type="number" name="txtRm" id="txt-rm" min="0" max="99999"/>
+		<label id="lb-notas">Notas:</label> 
+		<InputNumber @bind-Value="@aluno.Prova1" placeholder="Nota 1" name="txtNota1" id="txt-nota2" min="0" max="10"/>
+		<InputNumber @bind-Value="@aluno.Prova2" placeholder="Nota 2" name="txtNota2" id="txt-nota2" min="0" max="10"/>
+		<input type="submit" id="btn-adicionar" value="Adicionar">
+		<button id="btn-cancelar" @onclick="onfechar" >Cancelar</button>
+		@if(Erro is not null){
+			<span id="msg">@Erro</span>
+		}
+	</EditForm>
+</div>
