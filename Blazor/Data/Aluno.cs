@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace blazor.Data;
 public enum SituacaoAluno
 {
@@ -13,6 +15,7 @@ public class Aluno
 	public decimal Prova1 {get;set;}
 	public decimal Prova2 {get;set;}
 	public decimal Media => (Prova1 + Prova2) / 2;
+	 [JsonIgnore]
 	public SituacaoAluno SituaçãoFinal  =>  Media >=  5 ? SituacaoAluno.Aprovado: SituacaoAluno.Reprovado ;
 	public Aluno(int rm, string nome, decimal prova1, decimal prova2)
 	{
