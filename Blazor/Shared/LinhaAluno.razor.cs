@@ -12,6 +12,7 @@ namespace blazor.Shared
         public EventCallback OnExcluir { get; set; }
         [Parameter]
         public bool impar { get; set; }
+        
         bool Reprovado => aluno.SituaçãoFinal == SituacaoAluno.Reprovado;
 
         string Classes {get{

@@ -51,7 +51,6 @@ namespace blazor.Pages
 		
 		protected override void OnInitialized()
 		{
-			AlunosService.Reiniciar();
 			AtualizarDados();
 			AlunosService.ListaAtualizada += ListaAtualizada;
 		}
